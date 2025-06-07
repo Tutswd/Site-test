@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loja Fashion</title>
+  <style>
+    /* Reset e fontes padrão */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Cabeçalho fixo */
+    header {
+      background-color: #000;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+
+    header:hover {
+      background-color: #111;
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background-color: #fff;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Banner principal */
+    .banner {
+      height: 90vh;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1533577116850-9cc66cad8a9b') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .banner-content {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 20px;
+      animation: slideIn 1.5s ease-out;
+    }
+
+    .banner h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .banner p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .banner a {
+      background-color: #fff;
+      color: #000;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .banner a:hover {
+      background-color: #e91e63;
+      color: white;
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Loja Fashion</h1>
+    <nav>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Banner Principal -->
+  <section class="banner" id="banner">
+    <div class="banner-content">
+      <h2>Nova Coleção 2025</h2>
+      <p>Moda com atitude, estilo com essência</p>
+      <a href="#produtos">Comprar agora</a>
+    </div>
+  </section>
+
+    <!-- Início da seção -->
+  <section id="produtos" style="padding: 60px 40px; background-color: #fff;">
+    <h2 style="font-size: 32px; margin-bottom: 30px; text-align: center;">Nossos Produtos</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+      <!-- Produtos gerados automaticamente -->
+      <!-- Produto 1 a 30 -->
+      <!-- Cada produto tem animação de hover -->
+      <style>
+        .produto {
+          background: white;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .produto:hover {
+          transform: scale(1.03);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .produto img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+        }
+
+        .info {
+          padding: 15px;
+        }
+
+        .info h3 {
+          margin-bottom: 8px;
+          font-size: 20px;
+        }
+
+        .info p {
+          font-size: 14px;
+          color: #555;
+          margin-bottom: 10px;
+        }
+
+        .info span {
+          font-weight: bold;
+          color: #e91e63;
+        }
+      </style>
+
+      <!-- Loop manual de 30 produtos -->
+      <!-- Você pode substituir por produtos reais -->
+      <!-- Produto 1 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+1" alt="Produto 1" />
+        <div class="info">
+          <h3>Produto 1</h3>
+          <p>Estilo e conforto para o seu dia a dia.</p>
+          <span>R$ 84,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 2 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+2" alt="Produto 2" />
+        <div class="info">
+          <h3>Produto 2</h3>
+          <p>Design moderno e exclusivo.</p>
+          <span>R$ 89,00</span>
+        </div>
+      </div>
+
+            <!-- Produto 3 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+3" alt="Produto 3" />
+        <div class="info">
+          <h3>Produto 3</h3>
+          <p>Toque sofisticado para ocasiões especiais.</p>
+          <span>R$ 95,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 4 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+4" alt="Produto 4" />
+        <div class="info">
+          <h3>Produto 4</h3>
+          <p>Moda acessível com qualidade premium.</p>
+          <span>R$ 101,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 5 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+5" alt="Produto 5" />
+        <div class="info">
+          <h3>Produto 5</h3>
+          <p>Perfeito para o dia a dia.</p>
+          <span>R$ 107,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 6 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+6" alt="Produto 6" />
+        <div class="info">
+          <h3>Produto 6</h3>
+          <p>Confortável, leve e estiloso.</p>
+          <span>R$ 113,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 7 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+7" alt="Produto 7" />
+        <div class="info">
+          <h3>Produto 7</h3>
+          <p>Ideal para todas as estações.</p>
+          <span>R$ 119,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 8 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+8" alt="Produto 8" />
+        <div class="info">
+          <h3>Produto 8</h3>
+          <p>Look versátil e atemporal.</p>
+          <span>R$ 125,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 9 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+9" alt="Produto 9" />
+        <div class="info">
+          <h3>Produto 9</h3>
+          <p>Alta durabilidade com elegância.</p>
+          <span>R$ 131,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 10 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+10" alt="Produto 10" />
+        <div class="info">
+          <h3>Produto 10</h3>
+          <p>Para quem ama moda e conforto.</p>
+          <span>R$ 137,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 11 a 30... (segue no mesmo padrão) -->
+
+            <!-- Produto 11 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+11" alt="Produto 11" />
+        <div class="info">
+          <h3>Produto 11</h3>
+          <p>Elegância para qualquer ocasião.</p>
+          <span>R$ 143,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 12 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+12" alt="Produto 12" />
+        <div class="info">
+          <h3>Produto 12</h3>
+          <p>Estilo casual com toque fashion.</p>
+          <span>R$ 149,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 13 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+13" alt="Produto 13" />
+        <div class="info">
+          <h3>Produto 13</h3>
+          <p>Looks modernos e confortáveis.</p>
+          <span>R$ 155,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 14 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+14" alt="Produto 14" />
+        <div class="info">
+          <h3>Produto 14</h3>
+          <p>Confeccionado com tecido premium.</p>
+          <span>R$ 161,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 15 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+15" alt="Produto 15" />
+        <div class="info">
+          <h3>Produto 15</h3>
+          <p>Inspirado nas últimas tendências.</p>
+          <span>R$ 167,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 16 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+16" alt="Produto 16" />
+        <div class="info">
+          <h3>Produto 16</h3>
+          <p>Leveza e estilo no mesmo look.</p>
+          <span>R$ 173,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 17 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+17" alt="Produto 17" />
+        <div class="info">
+          <h3>Produto 17</h3>
+          <p>Design exclusivo da nossa coleção.</p>
+          <span>R$ 179,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 18 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+18" alt="Produto 18" />
+        <div class="info">
+          <h3>Produto 18</h3>
+          <p>Moda urbana com personalidade.</p>
+          <span>R$ 185,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 19 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+19" alt="Produto 19" />
+        <div class="info">
+          <h3>Produto 19</h3>
+          <p>Praticidade e beleza no seu dia.</p>
+          <span>R$ 191,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 20 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+20" alt="Produto 20" />
+        <div class="info">
+          <h3>Produto 20</h3>
+          <p>Perfeito para compor seu visual.</p>
+          <span>R$ 197,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 21 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+21" alt="Produto 21" />
+        <div class="info">
+          <h3>Produto 21</h3>
+          <p>Essencial para o seu guarda-roupa.</p>
+          <span>R$ 203,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 22 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+22" alt="Produto 22" />
+        <div class="info">
+          <h3>Produto 22</h3>
+          <p>Estilo clean e minimalista.</p>
+          <span>R$ 209,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 23 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+23" alt="Produto 23" />
+        <div class="info">
+          <h3>Produto 23</h3>
+          <p>Detalhes que fazem a diferença.</p>
+          <span>R$ 215,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 24 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+24" alt="Produto 24" />
+        <div class="info">
+          <h3>Produto 24</h3>
+          <p>Peça chave para sua coleção.</p>
+          <span>R$ 221,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 25 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+25" alt="Produto 25" />
+        <div class="info">
+          <h3>Produto 25</h3>
+          <p>Feito para impressionar.</p>
+          <span>R$ 227,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 26 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+26" alt="Produto 26" />
+        <div class="info">
+          <h3>Produto 26</h3>
+          <p>Beleza aliada à praticidade.</p>
+          <span>R$ 233,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 27 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+27" alt="Produto 27" />
+        <div class="info">
+          <h3>Produto 27</h3>
+          <p>Design leve e moderno.</p>
+          <span>R$ 239,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 28 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+28" alt="Produto 28" />
+        <div class="info">
+          <h3>Produto 28</h3>
+          <p>Peça versátil para compor looks.</p>
+          <span>R$ 245,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 29 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+29" alt="Produto 29" />
+        <div class="info">
+          <h3>Produto 29</h3>
+          <p>Estampa exclusiva da coleção 2025.</p>
+          <span>R$ 251,00</span>
+        </div>
+      </div>
+
+      <!-- Produto 30 -->
+      <div class="produto">
+        <img src="https://via.placeholder.com/400x300?text=Produto+30" alt="Produto 30" />
+        <div class="info">
+          <h3>Produto 30</h3>
+          <p>Combinação de estilo e conforto.</p>
+          <span>R$ 257,00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Fim da seção -->
+
+    <!-- SOBRE A LOJA -->
+  <section id="sobre" style="padding: 60px 40px; background-color: #f9f9f9;">
+    <h2 style="font-size: 32px; text-align: center; margin-bottom: 20px;">Sobre a Loja</h2>
+    <p style="max-width: 800px; margin: auto; font-size: 18px; line-height: 1.6; text-align: center;">
+      Fundada em 2020, a <strong>ModaEssence</strong> é uma loja especializada em roupas que combinam estilo,
+      conforto e sustentabilidade. Trabalhamos com materiais de alta qualidade e buscamos sempre oferecer o melhor para nossos clientes, com peças únicas e atendimento humanizado.
+    </p>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" style="padding: 60px 40px; background-color: #fff;">
+    <h2 style="font-size: 32px; text-align: center; margin-bottom: 40px;">Depoimentos</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+      <!-- Depoimento 1 -->
+      <div style="background: #f0f0f0; border-radius: 12px; padding: 20px; max-width: 300px; transition: transform 0.3s;">
+        <p>"Comprei duas blusas e chegaram rapidinho! Excelente qualidade, virei cliente!"</p>
+        <strong>– Juliana A.</strong>
+      </div>
+      <!-- Depoimento 2 -->
+      <div style="background: #f0f0f0; border-radius: 12px; padding: 20px; max-width: 300px; transition: transform 0.3s;">
+        <p>"Atendimento super atencioso e as peças são lindas. Amei a embalagem também!"</p>
+        <strong>– Rodrigo M.</strong>
+      </div>
+      <!-- Depoimento 3 -->
+      <div style="background: #f0f0f0; border-radius: 12px; padding: 20px; max-width: 300px; transition: transform 0.3s;">
+        <p>"Ótima experiência de compra. Recomendo pra todo mundo!"</p>
+        <strong>– Carla F.</strong>
+      </div>
+    </div>
+
+    <style>
+      #depoimentos div:hover {
+        transform: scale(1.03);
+      }
+    </style>
+  </section>
+
+  <!-- FAQ - PERGUNTAS FREQUENTES -->
+  <section id="faq" style="padding: 60px 40px; background-color: #f9f9f9;">
+    <h2 style="font-size: 32px; text-align: center; margin-bottom: 30px;">Perguntas Frequentes</h2>
+    <div style="max-width: 800px; margin: auto;">
+      <!-- Cada pergunta é um botão que abre/fecha a resposta -->
+      <details style="margin-bottom: 20px;">
+        <summary style="font-weight: bold; font-size: 18px; cursor: pointer;">Como funcionam as trocas?</summary>
+        <p style="margin-top: 10px;">Você tem até 7 dias corridos após o recebimento para solicitar a troca. Basta entrar em contato com nosso suporte.</p>
+      </details>
+
+      <details style="margin-bottom: 20px;">
+        <summary style="font-weight: bold; font-size: 18px; cursor: pointer;">Vocês entregam para todo o Brasil?</summary>
+        <p style="margin-top: 10px;">Sim! Enviamos para todas as regiões com prazos variando de 3 a 12 dias úteis.</p>
+      </details>
+
+      <details style="margin-bottom: 20px;">
+        <summary style="font-weight: bold; font-size: 18px; cursor: pointer;">Quais são as formas de pagamento?</summary>
+        <p style="margin-top: 10px;">Aceitamos Pix, cartões de crédito (até 3x sem juros), débito e boleto bancário.</p>
+      </details>
+    </div>
+  </section>
+
+    <!-- CONTATO -->
+  <section id="contato" style="padding: 60px 40px; background-color: #fff;">
+    <h2 style="font-size: 32px; text-align: center; margin-bottom: 30px;">Fale Conosco</h2>
+    <form style="max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px;">
+      <input type="text" placeholder="Seu nome" required style="padding: 12px; font-size: 16px;" />
+      <input type="email" placeholder="Seu e-mail" required style="padding: 12px; font-size: 16px;" />
+      <textarea placeholder="Sua mensagem" rows="5" required style="padding: 12px; font-size: 16px;"></textarea>
+      <button type="submit" style="padding: 14px; font-size: 18px; background: black; color: white; border: none; cursor: pointer; transition: background 0.3s;">
+        Enviar Mensagem
+      </button>
+    </form>
+    <style>
+      form button:hover {
+        background: #333;
+      }
+    </style>
+  </section>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <a href="#topo" title="Voltar ao topo" style="
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: black;
+    color: white;
+    padding: 14px 16px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background 0.3s, transform 0.3s;
+    z-index: 999;
+  ">↑</a>
+  <style>
+    a[href="#topo"]:hover {
+      background: #333;
+      transform: scale(1.1);
+    }
+  </style>
+
+  <!-- RODAPÉ -->
+  <footer style="background: #222; color: #fff; text-align: center; padding: 40px 20px;">
+    <p style="font-size: 16px;">&copy; 2025 ModaEssence. Todos os direitos reservados.</p>
+    <nav style="margin-top: 10px;">
+      <a href="#produtos" style="color: #ccc; margin: 0 10px; text-decoration: none;">Produtos</a>
+      <a href="#sobre" style="color: #ccc; margin: 0 10px; text-decoration: none;">Sobre</a>
+      <a href="#faq" style="color: #ccc; margin: 0 10px; text-decoration: none;">FAQ</a>
+      <a href="#contato" style="color: #ccc; margin: 0 10px; text-decoration: none;">Contato</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
+
